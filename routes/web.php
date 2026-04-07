@@ -16,6 +16,10 @@ Route::get('/users', function () {
     return view('users.index', ["greeting" => "Hello, welcome to the users page!", "users" => $users]);
 });
 
+Route::get("/users/create", function () {
+    return view("users.create");
+});
+
 Route::get('/users/{id}', function ($id) {
     // fetch record with id from db
     return view('users.show', ["userId" => $id]);

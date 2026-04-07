@@ -9,8 +9,8 @@ Route::get('/', function () {
 Route::get('/users', function () {
     $users = [
         ["name" => "ichami", "skill" => 98, "id" => 1],
-        ["name" => "john", "skill" => 85, "id" => 2],
-        ["name" => "doe", "skill" => 90, "id" => 3],
+        ["name" => "john", "skill" => 75, "id" => 2],
+        ["name" => "doe", "skill" => 70, "id" => 3],
     ];
 
     return view('users.index', ["greeting" => "Hello, welcome to the users page!", "users" => $users]);

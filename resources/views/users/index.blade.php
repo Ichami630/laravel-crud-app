@@ -5,7 +5,9 @@
     <ul>
         @forelse ($users as $user)
             <li>
-                <a href="/users/{{ $user['id'] }}">{{ $user['name'] }}</a>
+                <x-card href="/users/{{ $user['id'] }}" :highlight="$user['skill'] > 80">
+                    <h3>{{ $user['name'] }}</h3>
+                </x-card>
             </li>
         @empty
             <li>No users available</li>

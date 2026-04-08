@@ -4,8 +4,8 @@
     <ul>
         @forelse ($users as $user)
             <li>
-                <x-card href="/users/{{ $user['id'] }}" :highlight="$user['skill'] > 80">
-                    <h3>{{ $user['name'] }}</h3>
+                <x-card href="{{ route('users.show', $user->id) }}" :highlight="$user->skill > 80">
+                    <h3>{{ $user->name }}</h3>
                 </x-card>
             </li>
         @empty

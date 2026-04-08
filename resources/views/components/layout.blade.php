@@ -12,8 +12,8 @@
     <header>
         <nav>
             <h1>The reference Tech</h1>
-            <a href="/users">All Users</a>
-            <a href="/users/create">Create new users</a>
+            <a href="{{ route('users.index') }}">All Users</a>
+            <a href="{{ route('users.create') }}">Create new users</a>
         </nav>
 
         <main class="container">

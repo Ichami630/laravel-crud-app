@@ -9,13 +9,13 @@ class NinjaController extends Controller
 {
     public function index() {
         // route => /ninjas/
-        $users = Ninja::orderBy('created_at', 'desc')->paginate(10);
+        $users = Ninja::with('dojo')->orderBy('created_at', 'desc')->paginate(10);
         return view('users.index', ["users" => $users]);
     }
 
     public function show($id) {
         // route => /ninjas/{id}
-        $user = Ninja::findOrFail((int)$id);
+        $user = Ninja::with('dojo')->findOrFail((int)$id);
         return view('users.show', ["user" => $user]);
     }
 

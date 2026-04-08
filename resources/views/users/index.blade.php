@@ -5,7 +5,10 @@
         @forelse ($users as $user)
             <li>
                 <x-card href="{{ route('users.show', $user->id) }}" :highlight="$user->skill > 80">
-                    <h3>{{ $user->name }}</h3>
+                    <div>
+                        <h3>{{ $user->name }}</h3>
+                        <p>{{ $user->dojo->name }}</p>
+                    </div>
                 </x-card>
             </li>
         @empty

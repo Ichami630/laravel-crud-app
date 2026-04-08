@@ -3,13 +3,12 @@
 namespace Database\Factories;
 
 use App\Models\Dojo;
-use App\Models\Ninja;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Ninja>
+ * @extends Factory<Dojo>
  */
-class NinjaFactory extends Factory
+class DojoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,10 +18,9 @@ class NinjaFactory extends Factory
     public function definition(): array
     {
         return [
-            'dojo_id' => Dojo::inRandomOrder()->first()->id,
-            'name' => fake()->name(),
-            'skill' => fake()->numberBetween(0,100),
-            'bio' => fake()->realText(500)
+            'name' => fake()->company(),
+            'location' => fake()->city(),
+            'description' => fake()->paragraph(10)
         ];
     }
 }

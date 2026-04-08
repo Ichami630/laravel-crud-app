@@ -1,6 +1,5 @@
 <x-layout>
     <h2>Currently available users</h2>
-    <p>{{ $greeting }}</p>
 
     <ul>
         @forelse ($users as $user)

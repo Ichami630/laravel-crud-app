@@ -1,26 +1,14 @@
 <?php
 
+use App\Http\Controllers\NinjaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', function () {
-    $users = [
-        ["name" => "ichami", "skill" => 98, "id" => 1],
-        ["name" => "john", "skill" => 75, "id" => 2],
-        ["name" => "doe", "skill" => 70, "id" => 3],
-    ];
+Route::get('/users', [NinjaController::class, 'index']);
 
-    return view('users.index', ["greeting" => "Hello, welcome to the users page!", "users" => $users]);
-});
+Route::get("/users/create", [NinjaController::class, 'create']);
 
-Route::get("/users/create", function () {
-    return view("users.create");
-});
-
-Route::get('/users/{id}', function ($id) {
-    // fetch record with id from db
-    return view('users.show', ["userId" => $id]);
-});
+Route::get('/users/{id}', [NinjaController::class, 'show']);

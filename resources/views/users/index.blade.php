@@ -12,4 +12,6 @@
             <li>No users available</li>
         @endforelse
     </ul>
+
+    {{ $users->links() }}
 </x-layout>

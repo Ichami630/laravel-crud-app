@@ -37,7 +37,7 @@ class NinjaController extends Controller
 
         Ninja::create($validated);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success', 'User Created!');
     }
 
     public function destroy($id) {
@@ -45,6 +45,6 @@ class NinjaController extends Controller
 
         $ninja->delete();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success', 'User Deleted!');
     }
 }

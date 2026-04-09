@@ -40,9 +40,7 @@ class NinjaController extends Controller
         return redirect()->route('users.index')->with('success', 'User Created!');
     }
 
-    public function destroy($id) {
-        $ninja = Ninja::findOrFail((int)$id);
-
+    public function destroy(Ninja $ninja) { // route model binding
         $ninja->delete();
 
         return redirect()->route('users.index')->with('success', 'User Deleted!');
